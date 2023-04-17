@@ -1,0 +1,28 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "io.github.silverandro",
+		"id": "fiwb",
+		"version": "${version}",
+		"metadata": {
+			"name": "FUCK IT WE BALL",
+			"description": "FUCK IT WE BALL (fixes various quilt incompatibilities in other mods)",
+			"contributors": {
+				"Silver": "Owner"
+			},
+			"contact": {},
+			"icon": "assets/fuck_it_we_ball/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"pre_launch": "io.github.silverandro.fiwb.FuckItWeBall"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.18.1-"
+			}
+		]
+	},
+	"mixin": "fuckitweball.mixins.json"
+}

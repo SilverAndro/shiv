@@ -1,0 +1,65 @@
+plugins {
+	id 'maven-publish'
+	alias libs.plugins.quilt.loom
+}
+
+archivesBaseName = project.archives_base_name
+version = "${project.version}"
+group = project.maven_group
+
+repositories {
+	maven {
+		url 'https://repo.sleeping.town'
+		content {
+			includeGroup "com.unascribed"
+		}
+	}
+	maven {
+		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+}
+
+// All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
+// See https://docs.gradle.org/current/userguide/platforms.html for information on how version catalogs work.
+dependencies {
+	minecraft libs.minecraft
+	mappings variantOf(libs.quilt.mappings) { classifier 'intermediary-v2' }
+	modImplementation libs.quilt.loader
+
+
+	modImplementation libs.quilted.fabric.api
+	include(implementation('com.unascribed:flexver-java:1.0.2'))
+	include(implementation(project(":Mayo")))
+	include(implementation("net.bytebuddy:byte-buddy-agent:1.14.4"))
+
+	modCompileOnly("curse.maven:decorative_blocks-362528:3941637")
+}
+
+processResources {
+	inputs.property 'version', version
+
+	filesMatching('quilt.mod.json') {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = 'UTF-8'
+	it.options.release = 17
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+	withSourcesJar()
+}
+
+// If you plan to use a different file for the license, don't forget to change the file name here!
+jar {
+	from('LICENSE') {
+		rename { "${it}_${archivesBaseName}" }
+	}
+}
