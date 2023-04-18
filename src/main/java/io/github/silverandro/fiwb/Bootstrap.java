@@ -1,9 +1,12 @@
 package io.github.silverandro.fiwb;
 
+import io.github.silverandro.fiwb.transformers.MixinTargetContextTransformer;
+import io.github.silverandro.fiwb.transformers.PluginHandleTransformer;
 import net.bytebuddy.agent.ByteBuddyAgent;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.transformer.Config;
+import org.spongepowered.asm.mixin.transformer.MixinTargetContext;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -83,11 +86,19 @@ public class Bootstrap {
 		// Have a clean error if we cant actually do the boostrapping we need
 		if (instrument.isRetransformClassesSupported()) {
 			if (instrument.isModifiableClass(pluginHandleClass)) {
-				// Add the transformer, patch the plugin handle class, and remove our transformer after
-				var patcher = new PluginHandleTransformer();
-				instrument.addTransformer(patcher, true);
+				// Patch the plugin handle class
+				LOGGER.info("Patching PluginHandle to check with MixinDeleter");
+				var pluginHandlePatcher = new PluginHandleTransformer();
+				instrument.addTransformer(pluginHandlePatcher, true);
 				instrument.retransformClasses(pluginHandleClass);
-				instrument.removeTransformer(patcher);
+				instrument.removeTransformer(pluginHandlePatcher);
+
+				// Patch MixinTargetContext
+				LOGGER.info("Patching MixinTargetContext to hide mixin methods");
+				var targetContextPatcher = new MixinTargetContextTransformer();
+				instrument.addTransformer(targetContextPatcher, true);
+				instrument.retransformClasses(MixinTargetContext.class);
+				instrument.removeTransformer(targetContextPatcher);
 			} else {
 				throw new IllegalStateException("Cannot modify plugin handle class! PluginHandle class is not modifiable");
 			}

@@ -36,7 +36,8 @@ dependencies {
 	include(implementation("net.bytebuddy:byte-buddy-agent:1.14.4"))
 
 	modCompileOnly("curse.maven:decorative_blocks-362528:3941637")
-	modCompileOnly("curse.maven:combat-enchantments-517947:3921649")
+	modCompileOnly("curse.maven:combat_enchantments-517947:3921649")
+	modCompileOnly("curse.maven:big_beacons-450922:3849599")
 }
 
 processResources {

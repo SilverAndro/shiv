@@ -1,4 +1,4 @@
-package io.github.silverandro.fiwb;
+package io.github.silverandro.fiwb.transformers;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
@@ -9,7 +9,6 @@ import org.quiltmc.loader.api.QuiltLoader;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 import java.util.Objects;
 

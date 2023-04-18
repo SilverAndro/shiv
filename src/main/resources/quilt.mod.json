@@ -15,6 +15,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
+			"init": "io.github.silverandro.fiwb.FuckItWeBall",
 			"pre_launch": "io.github.silverandro.fiwb.FuckItWeBall"
 		},
 		"depends": [

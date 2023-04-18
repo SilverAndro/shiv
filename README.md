@@ -7,7 +7,9 @@ This mod uses a collection of hacks and tomfoolery to restore compatibility with
 ## Compatibility fixes:
 - Decorative blocks
 - Combat Enchantments
+- Big Beacons
 
 ## Internal toolkit
-- Mixin overwriting
+- Injection overwriting
 - Mixin control (shouldApplyMixin for other mods)
+- Mixin method removal
