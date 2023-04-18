@@ -6,11 +6,14 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "FUCK IT WE BALL",
-			"description": "FUCK IT WE BALL (fixes various quilt incompatibilities in other mods)",
+			"description": "Fixes various quilt incompatibilities in other mods",
 			"contributors": {
 				"Silver": "Owner"
 			},
-			"contact": {},
+			"contact": {
+				"sources": "https://github.com/SilverAndro/fuck-it-we-ball",
+				"issues": "https://github.com/SilverAndro/fuck-it-we-ball/issues"
+			},
 			"icon": "assets/fuck_it_we_ball/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",

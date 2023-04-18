@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 public class RemoveBigBeaconsRefreshEffect {
 	/**
 	 * @author Silver
-	 * @reason Code is relies on mixin that cant be trivially replicated and had to be removed
+	 * @reason Code relies on mixin that cant be trivially replicated and had to be removed
 	 */
 	@Overwrite
 	public void onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {}
