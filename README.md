@@ -1,8 +1,10 @@
 # Fuck It We Ball (fiwb)
 
-This (*very* wip) mod uses a bunch of hacks and other stuff to repair quilt compatibility with mods that are otherwise broken on quilt.
+This mod uses a collection of hacks and tomfoolery to restore compatibility with other mods on quilt. This mostly involves modifying or removing mixins from other mods and replacing it with compatible code.
 
-## Compatibility Fixes:
+**You must be running minecraft in a JDK for this mod to work, the JRE does not support the attach API.**
+
+## Compatibility fixes:
 - Decorative blocks
 - Combat Enchantments
 
