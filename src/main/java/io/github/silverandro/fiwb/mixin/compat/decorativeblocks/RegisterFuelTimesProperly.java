@@ -1,5 +1,6 @@
 package io.github.silverandro.fiwb.mixin.compat.decorativeblocks;
 
+import io.github.silverandro.fiwb.mixin_util.IfMatch;
 import lilypuree.decorative_blocks.DecorativeBlocks;
 import lilypuree.decorative_blocks.core.DBBlocks;
 import lilypuree.decorative_blocks.core.DBTags;
@@ -9,6 +10,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@IfMatch(
+	matchString = "decorative_blocks (quilt_registry_entry_attachment | quilt_registry_entry_attachment)",
+	message = "Injecting proper fuel registration into decorative blocks"
+)
 @Mixin(value = DecorativeBlocks.class, remap = false)
 public class RegisterFuelTimesProperly {
 	@SuppressWarnings("deprecation")

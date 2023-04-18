@@ -6,8 +6,8 @@ import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import org.spongepowered.asm.mixin.Mixin;
 
 @IfMatch(
-	matchString = "decorative_blocks quilt_registry_entry_attachment:>=1.1.0",
-	message = "Patching decorative blocks fuel registration to be REA compatible"
+	matchString = "decorative_blocks (quilt_registry_entry_attachment | quilt_registry_entry_attachment)",
+	message = "Removing decorative blocks builtin fuel registration"
 )
 @Mixin(value = AbstractFurnaceBlockEntity.class)
 public class PreventBadFuelRegistration {
