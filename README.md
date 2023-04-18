@@ -4,6 +4,7 @@ This (*very* wip) mod uses a bunch of hacks and other stuff to repair quilt comp
 
 ## Compatibility Fixes:
 - Decorative blocks
+- Combat Enchantments
 
 ## Internal toolkit
 - Mixin overwriting

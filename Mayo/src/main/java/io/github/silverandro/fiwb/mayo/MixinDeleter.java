@@ -5,7 +5,7 @@ import java.util.Arrays;
 @SuppressWarnings("unused")
 public class MixinDeleter {
 	private static final String[] mixinsToDelete = new String[] {
-		""
+		"com.dsfhdshdjtsb.CombatEnchants.mixin.CenchantsBowItemMixin"
 	};
 
 	public static boolean shouldApplyOtherMixin(String otherMixinClassName) {

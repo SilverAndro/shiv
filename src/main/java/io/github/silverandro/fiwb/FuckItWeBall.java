@@ -10,6 +10,6 @@ public class FuckItWeBall implements PreLaunchEntrypoint {
 
 	@Override
 	public void onPreLaunch(ModContainer mod) {
-		LOGGER.info("Reached pre-init! (even though we should have complete control over mixin and other classes by now");
+		LOGGER.info("Reached pre-init! (even though we should have complete control over mixin and other classes by now)");
 	}
 }
