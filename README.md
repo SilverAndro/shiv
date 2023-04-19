@@ -14,7 +14,7 @@ All crash reports should go on the [github](https://github.com/SilverAndro/fuck-
 - Combat Enchantments
 - Big Beacons
 
-## Internal toolkit
+## Internal toolkit:
 - Injection overwriting
 - Mixin control (shouldApplyMixin for other mods)
 - Mixin method removal
