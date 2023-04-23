@@ -22,7 +22,7 @@ public class Bootstrap {
 	private static boolean didBootstrap = false;
 
 	@SuppressWarnings("ResultOfMethodCallIgnored")
-	public static void boostrap() throws NoSuchFieldException, IllegalAccessException, UnmodifiableClassException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException {
+	public static void boostrap() throws NoSuchFieldException, IllegalAccessException, UnmodifiableClassException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IOException {
 		if (didBootstrap) {
 			return;
 		}
@@ -35,6 +35,10 @@ public class Bootstrap {
 		LOGGER.info("FUCK IT WE BALL");
 
 		LOGGER.info("Classloder: " + Bootstrap.class.getClassLoader());
+
+		// Clear out the synth classes
+		var synthFiles = QuiltLoader.getGameDir().resolve(".fiwb/synth").toFile();
+		deleteFolder(synthFiles);
 
 		// Add to the env
 		QuiltLoader.getAllMods().forEach(modContainer -> {
@@ -107,5 +111,20 @@ public class Bootstrap {
 		}
 
 		LOGGER.info("Successfully bootstrapped!");
+	}
+
+	@SuppressWarnings("ResultOfMethodCallIgnored")
+	public static void deleteFolder(File folder) {
+		File[] files = folder.listFiles();
+		if(files!=null) { //some JVMs return null for empty dirs
+			for(File f: files) {
+				if(f.isDirectory()) {
+					deleteFolder(f);
+				} else {
+					f.delete();
+				}
+			}
+		}
+		folder.delete();
 	}
 }

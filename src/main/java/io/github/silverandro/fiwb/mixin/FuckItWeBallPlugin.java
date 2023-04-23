@@ -41,7 +41,7 @@ public class FuckItWeBallPlugin implements IMixinConfigPlugin {
 		try {
 			Bootstrap.boostrap();
 		} catch (NoSuchFieldException | IllegalAccessException | UnmodifiableClassException | ClassNotFoundException |
-				 InvocationTargetException | NoSuchMethodException e) {
+				 InvocationTargetException | NoSuchMethodException | IOException e) {
 			throw new RuntimeException(e);
 		}
 	}

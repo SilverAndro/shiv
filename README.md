@@ -13,8 +13,10 @@ All crash reports should go on the [github](https://github.com/SilverAndro/fuck-
 - Decorative blocks
 - Combat Enchantments
 - Big Beacons
+- Armored Elytra
 
 ## Internal toolkit:
 - Injection overwriting
 - Mixin control (shouldApplyMixin for other mods)
 - Mixin method removal
+- Arbitrary bytecode transformations
