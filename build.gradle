@@ -61,7 +61,9 @@ java {
 
 // If you plan to use a different file for the license, don't forget to change the file name here!
 jar {
-	from('LICENSE') {
-		rename { "${it}_${archivesBaseName}" }
+	from('LICENSE.md') {
+		rename { "${it}_${archivesBaseName}.md" }
 	}
+
+	from('NOTICE.txt')
 }

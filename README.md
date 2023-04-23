@@ -14,6 +14,7 @@ All crash reports should go on the [github](https://github.com/SilverAndro/fuck-
 - Combat Enchantments
 - Big Beacons
 - Armored Elytra
+- Rpg Difficulty
 
 ## Internal toolkit:
 - Injection overwriting

@@ -1,0 +1,5 @@
+The file "DefaultAttributeRegistryAccessor.class" in object form or "DefaultAttributeRegistryAccessor.java" in source form,
+available in the "net.fabricmc.fabric.mixin.object.builder", package are copyright
+2016, 2017, 2018, 2019 FabricMC and licensed under the Apache 2.0 license available at https://www.apache.org/licenses/LICENSE-2.0.
+The file in source form is unchanged from its original at
+https://github.com/FabricMC/fabric/blob/1e1ae7250380c0acd9ec7b6c4b48d84995d207e8/fabric-object-builder-api-v1/src/main/java/net/fabricmc/fabric/mixin/object/builder/DefaultAttributeRegistryAccessor.java

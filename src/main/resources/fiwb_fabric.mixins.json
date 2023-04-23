@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.fabric.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "object.builder.DefaultAttributeRegistryAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
