@@ -11,7 +11,9 @@
     "compat.decorativeblocks.PreventBadFuelRegistration",
     "compat.decorativeblocks.RegisterFuelTimesProperly"
   ],
-  "client": [],
+  "client": [
+    "compat.armored_elytra.EnsureArmoredElytraOrdering"
+  ],
   "injectors": {
     "defaultRequire": 1
 	}
