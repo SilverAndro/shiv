@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "io.github.silverandro.fiwb"
+group = "io.github.silverandro.shiv"
 version = "1.0.0"
 
 repositories {
@@ -16,7 +16,7 @@ dependencies {
 tasks {
     jar {
         manifest.attributes(
-            "Agent-Class" to "io.github.silverandro.fiwb.mayo.Mayo",
+            "Agent-Class" to "io.github.silverandro.shiv.mayo.Mayo",
             "Can-Redefine-Classes" to true,
             "Can-Retransform-Classes" to true
         )

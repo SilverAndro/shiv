@@ -1,4 +1,4 @@
-# Fuck It We Ball (fiwb)
+# Shiv: its like a shim but more dangerous
 
 This mod uses a collection of hacks and tomfoolery to restore compatibility with other mods on quilt. This mostly involves modifying or removing mixins from other mods and replacing it with compatible code.
 
@@ -7,7 +7,7 @@ This mod uses a collection of hacks and tomfoolery to restore compatibility with
 ---
 
 Please dont complain to mod authors if their mod is broken while this mod is installed!
-All crash reports should go on the [github](https://github.com/SilverAndro/fuck-it-we-ball/issues).
+All crash reports should go on the [github](https://github.com/SilverAndro/shiv/issues).
 
 ## Compatibility fixes:
 - Decorative blocks

@@ -2,24 +2,24 @@
 	"schema_version": 1,
 	"quilt_loader": {
 		"group": "io.github.silverandro",
-		"id": "fiwb",
+		"id": "shiv",
 		"version": "${version}",
 		"metadata": {
-			"name": "FUCK IT WE BALL",
-			"description": "Fixes various quilt incompatibilities in other mods",
+			"name": "Shiv",
+			"description": "Fixes various quilt incompatibilities in other mods. Its like a shim but more dangerous",
 			"contributors": {
 				"Silver": "Owner"
 			},
 			"contact": {
-				"sources": "https://github.com/SilverAndro/fuck-it-we-ball",
-				"issues": "https://github.com/SilverAndro/fuck-it-we-ball/issues"
+				"sources": "https://github.com/SilverAndro/shiv",
+				"issues": "https://github.com/SilverAndro/shiv/issues"
 			},
-			"icon": "assets/fuck_it_we_ball/icon.png"
+			"icon": "assets/shiv/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.silverandro.fiwb.FuckItWeBall",
-			"pre_launch": "io.github.silverandro.fiwb.FuckItWeBall"
+			"init": "io.github.silverandro.shiv.ShivInit",
+			"pre_launch": "io.github.silverandro.shiv.ShivInit"
 		},
 		"depends": [
 			{
@@ -28,5 +28,5 @@
 			}
 		]
 	},
-	"mixin": "fuckitweball.mixins.json"
+	"mixin": "shiv.mixins.json"
 }
