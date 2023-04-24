@@ -64,6 +64,4 @@ jar {
 	from('LICENSE.md') {
 		rename { "${it}_${archivesBaseName}.md" }
 	}
-
-	from('NOTICE.txt')
 }

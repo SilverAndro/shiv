@@ -93,7 +93,11 @@ public class Bootstrap {
 				instrument.addTransformer(pluginHandlePatcher, true);
 				instrument.retransformClasses(pluginHandleClass);
 				instrument.removeTransformer(pluginHandlePatcher);
+			} else {
+				throw new IllegalStateException("Cannot modify plugin handle class! PluginHandle class is not modifiable");
+			}
 
+			if (instrument.isModifiableClass(MixinTargetContext.class)) {
 				// Patch MixinTargetContext
 				LOGGER.info("Patching MixinTargetContext to hide mixin methods");
 				var targetContextPatcher = new MixinTargetContextTransformer();
@@ -101,7 +105,7 @@ public class Bootstrap {
 				instrument.retransformClasses(MixinTargetContext.class);
 				instrument.removeTransformer(targetContextPatcher);
 			} else {
-				throw new IllegalStateException("Cannot modify plugin handle class! PluginHandle class is not modifiable");
+				throw new IllegalStateException("Cannot modify mixin target context class! MixinTargetClass class is not modifiable");
 			}
 		} else {
 			throw new IllegalStateException("Cannot modify plugin handle class! This JVM does not support retransformation");
