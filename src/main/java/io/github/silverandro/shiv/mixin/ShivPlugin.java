@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import org.spongepowered.asm.mixin.throwables.MixinException;
 import org.spongepowered.asm.mixin.transformer.meta.MixinMerged;
+import org.spongepowered.asm.service.MixinService;
 import org.spongepowered.asm.util.Annotations;
 import org.spongepowered.asm.util.Constants;
 
@@ -54,20 +55,20 @@ public class ShivPlugin implements IMixinConfigPlugin {
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
 		try {
-			// TODO: Better way to do this? Could cause classloader issues
-			var ifMatch = Class.forName(mixinClassName).getAnnotation(IfMatch.class);
+			var ifMatch = Annotations.get(MixinService.getService().getBytecodeProvider()
+				.getClassNode(mixinClassName).visibleAnnotations, IF_MATCH_DESC);
 			if (ifMatch == null) {
 				return true;
 			}
 
-			if (MatchEngine.isMatch(ifMatch.matchString())) {
-				ShivInit.LOGGER.info(ifMatch.message());
+			if (MatchEngine.isMatch(getAnnotationArg(ifMatch, "matchString"))) {
+				ShivInit.LOGGER.info(getAnnotationArg(ifMatch, "message"));
 				return true;
 			} else {
 				ShivInit.LOGGER.info("Not applying " + mixinClassName);
 				return false;
 			}
-		} catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException | IOException e) {
 			throw new RuntimeException(e);
 		}
 	}
